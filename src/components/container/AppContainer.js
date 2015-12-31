@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import TodoApp from '../TodoApp';
-import { addTodo, removeTodo, toggleTodo, receiveTodos, saveTodos } from '../../actions/todo-actions';
+import App from '../App';
 
 function mapStateToProps(state) {
     return {
@@ -10,11 +9,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        receiveTodos: () => dispatch(receiveTodos())
     };
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TodoApp);
+)(App);

@@ -1,1 +1,1 @@
-export { default as todo } from './todos-reducer';
+export { default as dictator } from './dictator-reducer';

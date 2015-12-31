@@ -77,7 +77,7 @@ const common = {
                 ]
             },
             {
-                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])$/,
                 loader: 'file-loader?name=assets/fonts/[name].[ext]',
                 include: [
                     PATHS.src,

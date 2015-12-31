@@ -1,30 +1,30 @@
 import React from 'react';
-import TodoForm from './TodoForm';
-import TodoLists from './TodoLists';
-import { prefetch, defer } from 'react-fetcher';
-import { receiveTodos } from '../actions/todo-actions';
+import { fetchDictators } from '../actions/dictator-actions';
+import Adi from './Adi';
 
 class IndexPage extends React.Component {
 
     render() {
 
-        const { saveTodos, addTodo, isChanged, todos, toggleTodo, removeTodo, moveTodo } = this.props;
+        const { dictators } = this.props;
 
         return (
 
             <section>
-                <TodoLists todos={todos} onToggle={toggleTodo} onRemove={removeTodo} onMove={moveTodo} />
 
-                <TodoForm onAdd={addTodo} />
+                <p>
+                    {dictators.count()} dictators
+                </p>
 
-                <button onClick={saveTodos.bind(null, todos)} disabled={!isChanged}>Save</button>
+                <Adi />
+
             </section>
         );
     }
 };
 
 IndexPage.fetch = ({dispatch}) => {
-    return dispatch(receiveTodos());
+    return dispatch(fetchDictators());
 };
 
 export default IndexPage;

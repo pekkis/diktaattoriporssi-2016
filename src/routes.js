@@ -2,10 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import { receiveTodos } from './actions/todo-actions';
-import TodoApp from './components/smart/TodoAppContainer';
-import IndexPage from './components/smart/IndexPageContainer';
-import TodoPage from './components/smart/TodoPageContainer';
-
+import App from './components/container/AppContainer';
+import IndexPage from './components/container/IndexPageContainer';
 
 export function createRoutes({ store, history }) {
 
@@ -14,7 +12,15 @@ export function createRoutes({ store, history }) {
         if (!this.component.fetch) {
             callback();
         }
-        this.component.fetch(store).then(callback);
+
+        const params = {
+            dispatch: store.dispatch,
+            params: nextState.params
+        };
+
+        this.component.fetch(params).then(() => callback()).catch(e => {
+            console.log(e, 'error');
+        });
     }
 
     function initApp(nextState, replaceState, callback) {
@@ -40,9 +46,8 @@ export function createRoutes({ store, history }) {
     */
 
     return (
-        <Route path="/" component={TodoApp}>
+        <Route path="/" component={App}>
             <IndexRoute component={IndexPage} onEnter={checkFetcher}/>
-            <Route path="todo/:uuid" component={TodoPage}/>
         </Route>
     );
 

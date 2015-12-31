@@ -48,7 +48,7 @@ export function receiveTodos() {
     return function(dispatch) {
 
         return todoService.get().then(todos => {
-            dispatch({
+            return dispatch({
                 type: RECEIVE_TODOS,
                 payload: List(todos)
             });
@@ -64,7 +64,7 @@ export function saveTodos(todos) {
     return function(dispatch) {
 
         return todoService.save(todos).then(() => {
-            dispatch({
+            return dispatch({
                 type: SAVE_TODOS
             });
         });

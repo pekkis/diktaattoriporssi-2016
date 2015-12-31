@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class TodoApp extends React.Component {
+export default class App extends React.Component {
 
     render() {
 
@@ -14,10 +14,5 @@ export default class TodoApp extends React.Component {
 
             </div>
         );
-    }
-
-    componentDidMount() {
-        // const { receiveTodos } = this.props;
-        // receiveTodos();
     }
 }
