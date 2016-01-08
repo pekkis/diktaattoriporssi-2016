@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSheet } from '../../services/jss';
 
 const moods = {
     angry: require('./angry-adi.svg'),
@@ -23,9 +24,13 @@ class Adi extends React.Component {
 
         const { mood } = this.state;
 
+        const { classes } = this.props.sheet;
+
+        console.log(classes)
+
         return (
             <div>
-                <img onMouseEnter={() => this.setMood('happy')}src={moods[mood]} />
+                <img className={classes.img} onMouseEnter={() => this.setMood('happy')} src={moods[mood]} />
             </div>
         );
 
@@ -48,4 +53,11 @@ class Adi extends React.Component {
     }
 }
 
-export default Adi;
+const styles = {
+    img: {
+        width: '20rem',
+    }
+};
+
+
+export default useSheet(Adi, styles);
