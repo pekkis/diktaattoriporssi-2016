@@ -4,13 +4,18 @@ import { Route, IndexRoute } from 'react-router';
 import { receiveTodos } from './actions/todo-actions';
 import App from './components/container/AppContainer';
 import IndexPage from './components/container/IndexPageContainer';
+import PropagandaPage from './components/container/PropagandaPageContainer';
+
+import DictatorsPage from './components/container/DictatorsPageContainer';
+import DictatorPage from './components/container/DictatorPageContainer';
+
 
 export function createRoutes({ store, history }) {
 
     function checkFetcher(nextState, replaceState, callback) {
 
         if (!this.component.fetch) {
-            callback();
+            return callback();
         }
 
         const params = {
@@ -25,9 +30,6 @@ export function createRoutes({ store, history }) {
 
     function initApp(nextState, replaceState, callback) {
 
-        store.dispatch(receiveTodos()).then(() => {
-            callback();
-        });
     }
 
     /*
@@ -48,6 +50,15 @@ export function createRoutes({ store, history }) {
     return (
         <Route path="/" component={App}>
             <IndexRoute component={IndexPage} onEnter={checkFetcher}/>
+
+            <Route path="diktaattorit">
+                <IndexRoute component={DictatorsPage} onEnter={checkFetcher} />
+                <Route path="/diktaattori/:canonicalName" component={DictatorPage} />
+            </Route>
+
+            <Route path="propaganda" component={PropagandaPage}/>
+
+
         </Route>
     );
 

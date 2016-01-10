@@ -1,0 +1,258 @@
+#sizer {
+  .contained();
+}
+
+#container {
+
+  background-color: rgba(255, 255, 255, .75);
+  .border-radius-bottomleft(@size-rounded-corners);
+  .border-radius-bottomright(@size-rounded-corners);
+  .border-radius-topleft(@size-rounded-corners);
+  .border-radius-topright(@size-rounded-corners);
+  border: 1px solid @color-border-dark;
+
+  > div {
+  }
+
+}
+
+header {
+
+  #bar {
+    .border-radius-topleft(@size-rounded-corners);
+    .border-radius-topright(@size-rounded-corners);
+    .border-radius-bottomleft(3em);
+    border-bottom: 1px solid @color-border-dark;
+    background: @color-bar; /* old browsers */
+
+    background: linear-gradient(180deg, @color-primary 0%, @color-primary 70%, @color-secondary 100%);
+
+    > div {
+      .padder(@size-padding / 2);
+      position: relative;
+      height: 125px;
+
+      #ask-adi {
+
+        i {
+          margin-left: @size-padding / 2;
+          cursor: pointer;
+        }
+
+        position: absolute;
+        bottom: -5px;
+        left: 110px;
+        z-index: 10000;
+        display: none;
+
+        .triangle-right {
+          position:relative;
+          padding:15px;
+          margin: 0 0 0 0;
+          color: rbg(0, 0, 0);
+          background: rgb(255, 255, 255);
+          /* css3 */
+
+          border-radius:10px;
+          border: 1px solid #000000;
+
+        }
+
+        .triangle-right.left {
+          margin-left:40px;
+          background: rgb(255, 255, 255);
+        }
+
+        .triangle-right:after {
+          content:"";
+          position:absolute;
+          bottom:-20px; /* value = - border-top-width - border-bottom-width */
+          left:50px; /* controls horizontal position */
+          border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
+          border-style:solid;
+          border-color: rgb(255, 255, 255) transparent;
+          /* reduce the damage in FF3.0 */
+          display:block;
+          width:0;
+        }
+
+        .triangle-right.left:after {
+          top:16px;
+          left:-40px; /* value = - border-left-width - border-right-width */
+          bottom:auto;
+          border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
+          border-color: transparent rgb(255, 255, 255);
+        }
+
+      }
+
+
+      #container-adi {
+        position: absolute;
+        left: -30px;
+        top: 63px;
+        margin-top: -73px;
+        z-index: 10001;
+        width: 150px;
+
+        .adi {
+
+          width: 150px;
+          height: 146px;
+          display: block;
+
+          img {
+            width: 150px;
+            height: 146px;
+          }
+
+        }
+      }
+
+
+    }
+  }
+
+  #logo {
+
+    margin-top: -@size-padding / 2;
+
+    h1 {
+      color: rgb(255, 255, 255);
+      .text-shadow(2px, 2px, 2px, #000);
+      font-size: 70px;
+      text-align: center;
+    }
+  }
+
+}
+
+footer {
+  font-size: 90%;
+
+  margin: 0 @size-padding * 2 0 @size-padding * 2;
+
+  text-align: center;
+  clear: both;
+
+  padding-top: @size-padding;
+  padding-bottom: @size-padding * 2;
+
+  nav {
+    margin: (@size-padding / 2) 0;
+
+  }
+
+  #jargon {
+    margin-right: 137px;
+  }
+
+
+  img {
+    vertical-align: middle;
+  }
+
+}
+
+.main-content {
+  background-image: url("content-bg.png");
+  background-repeat: repeat-x;
+  background-position: top left;
+  padding: @size-padding * 2 @size-padding 0 @size-padding;
+  margin-bottom: @size-padding * 2;
+}
+
+.padder {
+  padding: @size-padding;
+}
+
+.box {
+  margin: @size-padding*2 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+}
+
+.margined {
+  margin-left: @size-padding;
+  margin-right: @size-padding;
+}
+
+aside {
+  font-size: 90%;
+}
+
+
+.box-align-horizontal {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.box-content {
+
+  padding: @size-padding;
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid @color-border;
+}
+
+.box-facts {
+  background-color: @color-alternate;
+  border-top: 1px solid @color-border;
+  padding: @size-padding;
+  font-size: 80%;
+
+}
+
+
+
+h1:first-child {
+  margin-top: 0;
+}
+
+.paginator {
+
+  margin: @size-padding *2 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+header.page-header {
+  padding: 0 @size-padding 0 @size-padding;
+  margin-bottom: @size-padding*2;
+}
+
+.clearer {
+  clear: both;
+}
+
+.flow-primary {
+  float: left;
+  margin: 0 @size-padding @size-padding 0;
+}
+
+.flow-secondary {
+  float: right;
+  margin: 0 0 @size-padding @size-padding;
+}
+
+.borderer {
+  border: 1px solid @color-border-dark;
+}
+
+blockquote {
+  background-color: @color-alternate;
+  border-left: 0.5em solid @color-border;
+  padding: @size-padding;
+}
+
+

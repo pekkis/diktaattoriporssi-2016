@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import IndexPage from '../IndexPage';
+import PropagandaPage from '../PropagandaPage';
 
 import { bindActionCreators } from 'redux';
 import { setAdisMood } from '../../actions/dictator-actions';
@@ -21,4 +21,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(IndexPage);
+)(PropagandaPage);

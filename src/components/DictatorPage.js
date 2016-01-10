@@ -1,10 +1,7 @@
 import React from 'react';
 import { fetchDictators } from '../actions/dictator-actions';
-import Adi from './Adi';
 
-var count = 0;
-
-class IndexPage extends React.Component {
+class DictatorPage extends React.Component {
 
     render() {
 
@@ -23,8 +20,8 @@ class IndexPage extends React.Component {
     }
 };
 
-IndexPage.fetch = ({dispatch}) => {
+DictatorPage.fetch = ({dispatch}) => {
     return dispatch(fetchDictators());
 };
 
-export default IndexPage;
+export default DictatorPage;

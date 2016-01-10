@@ -1,3 +1,5 @@
+import './client.less';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -10,8 +12,10 @@ import * as reducers from './reducers';
 
 import { createRoutes } from './routes';
 
+
 import { jss } from './services/jss';
 
+/*
 const styles = {
 
     body: {
@@ -23,7 +27,7 @@ const styles = {
 }
 
 jss.createStyleSheet(styles, { named: false }).attach();
-
+*/
 
 
 const history = createHistory();

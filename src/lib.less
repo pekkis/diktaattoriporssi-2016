@@ -1,0 +1,105 @@
+@size-basefont: 16px;
+@size-content: 962px;
+@size-padding: 1em;
+
+@size-rounded-corners: 15px;
+
+@color-text: rgb(0, 0, 0);
+
+@color-background: rgb(210, 210, 210);
+@color-bar: @color-primary;
+@color-alternate: rgb(235, 235, 235);
+
+@color-border: rgb(200,200,200);
+@color-border-dark: rgb(102, 102, 102);
+
+/*
+@color-link: rgb(76, 0, 0);
+*/
+
+@color-link: rgb(76, 76, 76);
+
+@color-userbox: rgb(255,255,255);
+
+@size-heading-primary: 26px;
+@size-heading-secondary: 18px;
+
+@color-primary: rgb(204, 0, 0);
+@color-secondary: rgb(76, 0, 0);
+@color-tertiary: rgb(212, 64, 64);
+@color-fourtiary: rgb(76, 23, 23);
+@color-fiftiary: rgb(153, 0, 0);
+
+.text-shadow(@horizontal, @vertical, @blur, @color) {
+    text-shadow: @horizontal @vertical @blur @color;
+}
+
+.box-shadow(@horizontal, @vertical, @blur, @color) {
+    box-shadow: @horizontal @vertical @blur @color;
+}
+
+.contained() {
+  margin: 0 auto;
+  width: @size-content;
+}
+
+.padder(@padding) {
+  padding: @padding;
+}
+
+.padder(@padding-top, @padding-side) {
+  padding: @padding-top @padding-side;
+}
+
+
+
+.content-block() {
+    width: @size-content;
+    margin: 0 auto;    
+}
+
+.border-radius-simple(@radius)
+{
+    border-radius: @radius;
+    
+}
+
+.border-radius-topleft(@radius) {
+    border-top-left-radius: @radius;
+}
+
+.border-radius-topright(@radius) {
+    border-top-right-radius: @radius;
+}
+
+.border-radius-bottomleft(@radius) {
+    border-bottom-left-radius: @radius;
+}
+
+
+.border-radius-bottomright(@radius) {
+    border-bottom-right-radius: @radius;
+}
+
+
+.box-shadow-inset-simple(@radius, @color)
+{
+    box-shadow: inset @radius @radius @radius @color;
+}
+
+.box-shadow-simple(@radius, @color)
+{
+    box-shadow: @radius @radius @radius @color;
+}
+
+.box-shadow(@horizontal, @vertical, @blur, @color)
+{
+    box-shadow: @horizontal @vertical @blur @color;
+       
+}
+
+.transform(@scale, @rotate, @translateX, @translateY, @skewX, @skewY)
+{
+    transform: scale(@scale) rotate(@rotate) translate(@translateX, @translateY) skew(@skewX, @skewY);
+}
+

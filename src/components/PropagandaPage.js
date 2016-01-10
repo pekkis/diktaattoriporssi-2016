@@ -4,7 +4,7 @@ import Adi from './Adi';
 
 var count = 0;
 
-class IndexPage extends React.Component {
+class PropagandaPage extends React.Component {
 
     render() {
 
@@ -14,17 +14,15 @@ class IndexPage extends React.Component {
 
             <section>
 
-                <p>
-                    {dictators.count()} dictators
-                </p>
+                <h1>Propaganda</h1>
 
             </section>
         );
     }
 };
 
-IndexPage.fetch = ({dispatch}) => {
+PropagandaPage.fetch = ({dispatch}) => {
     return dispatch(fetchDictators());
 };
 
-export default IndexPage;
+export default PropagandaPage;
