@@ -9,6 +9,7 @@ function mapStateToProps(state) {
     return {
         dictators: state.dictator.get('dictators'),
         adi: state.dictator.get('adi'),
+        gallery: state.dictator.get('gallery'),
     };
 }
 

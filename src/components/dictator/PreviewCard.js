@@ -9,7 +9,7 @@ export default function PreviewCard(props) {
 
     const { dictator } = props;
 
-    console.log(dictator);
+    console.log(dictator.synopsis);
 
     return (
 
@@ -36,14 +36,7 @@ export default function PreviewCard(props) {
                 </div>
             </div>
 
-            <p>
-            <strong>Adolf Hitlerin</strong>, Saksan Führerin, aggressiivinen ekspansionismi johti
-            toiseen maailmansotaan, historian tuhoisimpaan konfliktiin.
-            Hitler teollisti vihan ja tappamisen projektissa, joka huipentui holokaustiin: juutalaisten, romanien, vammaisten
-            ja muiden natsien silmissä kelvottomien kansanmurhaan.
-            </p>
-
-            <div className="clearer"></div>
+            <div className="synopsis" dangerouslySetInnerHTML={{__html: dictator.synopsis}} />
 
         </section>
     );

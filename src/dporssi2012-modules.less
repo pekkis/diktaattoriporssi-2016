@@ -96,12 +96,23 @@
 #slider {
   font-size: 80%;
   margin-bottom: 2em;
-  overflow: hidden;
+  // overflow: hidden;
   max-height: 329px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+  }
+
 
   .item {
     position: relative;
-    dmargin-right: @size-padding * 2;
   }
 
   img {

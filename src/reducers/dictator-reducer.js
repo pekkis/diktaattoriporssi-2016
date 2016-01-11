@@ -1,5 +1,6 @@
 import { List, Map } from 'immutable';
 import uuid from 'node-uuid';
+import r from '../services/r';
 
 import {
     RECEIVE_DICTATORS,
@@ -9,6 +10,7 @@ import {
 const defaultState = Map({
     dictators: List(),
     adi: 'angry',
+    gallery: r.integer(0, 11)
 });
 
 export default function(state = defaultState, action) {

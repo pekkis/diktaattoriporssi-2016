@@ -2,23 +2,23 @@ import React from 'react';
 import { fetchDictators } from '../actions/dictator-actions';
 import Adi from './Adi';
 
-var count = 0;
+import PageContainer from './PageContainer';
+import Gallery from './Gallery';
+
 
 class IndexPage extends React.Component {
 
     render() {
 
-        const { dictators } = this.props;
+        const { dictators, gallery } = this.props;
 
         return (
 
-            <section>
+            <PageContainer>
 
-                <p>
-                    {dictators.count()} dictators
-                </p>
+                <Gallery entry={gallery} />
 
-            </section>
+            </PageContainer>
         );
     }
 };
