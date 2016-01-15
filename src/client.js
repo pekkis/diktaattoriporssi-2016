@@ -15,6 +15,8 @@ import { createRoutes } from './routes';
 
 import { jss } from './services/jss';
 
+import config from '../config.client';
+
 /*
 const styles = {
 

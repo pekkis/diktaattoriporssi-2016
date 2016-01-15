@@ -4,6 +4,21 @@
   },
   "styles": {},
   "assets": {
-    "./src/images/top-secret.png": "/assets/images/8oi5Qw2s.png"
+    "./src/components/Adi/angry-adi.svg": "/assets/images/oDoHwK1i.svg",
+    "./src/components/Adi/happy-adi.svg": "/assets/images/au2ruDES.svg",
+    "./src/components/Adi/stare-adi.svg": "/assets/images/fLK7dqzv.svg",
+    "./src/components/Gallery/slider/albanian-bunkers-slider.jpg": "/assets/images/72AWJSk9.jpg",
+    "./src/components/Gallery/slider/bokassa-slider.jpg": "/assets/images/xa3BqmoP.jpg",
+    "./src/components/Gallery/slider/gaddafi-slider.jpg": "/assets/images/7fVizB7Q.jpg",
+    "./src/components/Gallery/slider/idi-slider.jpg": "/assets/images/jSgaSPHt.jpg",
+    "./src/components/Gallery/slider/isa-ja-poika-kim.jpg": "/assets/images/ExvCd6Ky.jpg",
+    "./src/components/Gallery/slider/kim-jong-body-slider.jpg": "/assets/images/4r2zetLP.jpg",
+    "./src/components/Gallery/slider/kim-jong-il-slider.jpg": "/assets/images/8gSuaVaA.jpg",
+    "./src/components/Gallery/slider/kim-jong-un-ja-dennis-rodman.jpg": "/assets/images/5M1qbUs8.jpg",
+    "./src/components/Gallery/slider/mobutu-slider.jpg": "/assets/images/wLhWzQuB.jpg",
+    "./src/components/Gallery/slider/mussolini-hitler-slider.jpg": "/assets/images/dngPVWaN.jpg",
+    "./src/components/Gallery/slider/stalin-statue-slider.jpg": "/assets/images/me7LQgL9.jpg",
+    "./src/components/Gallery/slider/turkmenbashi-kaantyy-kohti-diktaattoriporssia.jpg": "/assets/images/cMhXbxvR.jpg",
+    "./src/wallpaper/north-korean-propaganda.png": "/assets/images/nHkbAVeh.png"
   }
 }

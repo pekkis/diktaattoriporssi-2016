@@ -2,7 +2,7 @@ import uuid from 'node-uuid';
 import { List } from 'immutable';
 
 import { createServer } from './broilerplate/server';
-import config from './config-server';
+import config from '../config.server';
 import webpackConfig from '../webpack.config';
 
 createServer(config, webpackConfig, (app) => {

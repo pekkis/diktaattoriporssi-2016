@@ -20,6 +20,8 @@ const webpack_isomorphic_tools_plugin =
   new Webpack_isomorphic_tools_plugin(require('./webpack-isomorphic'))
     .development();
 
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 const common = {
 
     context: __dirname,
@@ -29,30 +31,18 @@ const common = {
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                include: [
-                    PATHS.src,
-                    PATHS.test
-                ],
                 exclude: [
                     PATHS.modules,
                 ]
             },
             {
                 test: /\.less$/,
-                loaders: [
+                loader: ExtractTextPlugin.extract(
                     'style-loader',
                     'css-loader',
                     'autoprefixer-loader?browsers=last 2 version',
                     'less-loader'
-                ],
-                include: [
-                    PATHS.src,
-                    PATHS.modules
-                ]
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader',
+                ),
                 include: [
                     PATHS.src,
                     PATHS.modules
@@ -114,6 +104,8 @@ const envs = {
             new webpack.optimize.OccurenceOrderPlugin(),
             new webpack.HotModuleReplacementPlugin(),
 
+            new ExtractTextPlugin("styles.css"),
+
             new HtmlWebpackPlugin({
                 title: 'JavaScript SchamaScript',
                 template: 'web/index.html',
@@ -124,6 +116,7 @@ const envs = {
                 __DEVELOPMENT__: process.env.NODE_ENV === 'development',
                 __DEVTOOLS__: false
             }),
+
         ]
     },
     prod: {

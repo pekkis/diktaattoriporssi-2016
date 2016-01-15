@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import Name from './Name';
 import Image from '../Image';
-import Icon from 'react-fa';
 import Reign from './Reign';
 
 export default function PreviewCard(props) {
@@ -32,7 +31,7 @@ export default function PreviewCard(props) {
                 <Reign reign={dictator.reign} />
 
                 <div className="naughtiness">
-                    <Icon name="tachometer"></Icon> {dictator.naughtiness.displayMilliHitlers} mHi
+                    {dictator.naughtiness.displayMilliHitlers} mHi
                 </div>
             </div>
 
