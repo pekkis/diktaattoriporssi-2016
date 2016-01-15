@@ -32,6 +32,7 @@
     "random-js": "^1.0.8",
     "react-fa": "^4.0.0",
     "react-jss": "^2.0.1",
+    "react-pacomo": "^0.5.1",
     "recompose": "^0.14.2"
   },
   "devDependencies": {
