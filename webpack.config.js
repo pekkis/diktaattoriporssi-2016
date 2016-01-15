@@ -39,10 +39,16 @@ const common = {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract(
                     'style-loader',
-                    'css-loader',
-                    'autoprefixer-loader?browsers=last 2 version',
-                    'less-loader'
+                    'css-loader!autoprefixer-loader?browsers=last 2 version!less-loader',
                 ),
+                include: [
+                    PATHS.src,
+                    PATHS.modules
+                ]
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
                 include: [
                     PATHS.src,
                     PATHS.modules
@@ -97,14 +103,14 @@ const envs = {
         output: {
             path: path.join(__dirname, 'dist'),
             publicPath: '/',
-            filename: 'client.js'
+            filename: 'client.[hash].js'
         },
         plugins: [
             webpack_isomorphic_tools_plugin,
             new webpack.optimize.OccurenceOrderPlugin(),
             new webpack.HotModuleReplacementPlugin(),
 
-            new ExtractTextPlugin("styles.css"),
+            new ExtractTextPlugin("styles.[contenthash].css"),
 
             new HtmlWebpackPlugin({
                 title: 'JavaScript SchamaScript',
