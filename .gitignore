@@ -7,3 +7,4 @@ config.server.js
 dist/*
 .DS_Store
 coverage/
+webpack-assets.json

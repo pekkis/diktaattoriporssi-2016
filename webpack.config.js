@@ -22,6 +22,8 @@ const webpack_isomorphic_tools_plugin =
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const pkg = require('./package.json');
+
 const common = {
 
     context: __dirname,
@@ -39,7 +41,7 @@ const common = {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract(
                     'style-loader',
-                    'css-loader!autoprefixer-loader?browsers=last 2 version!less-loader',
+                    'css-loader!autoprefixer-loader?browsers=last 2 version!less-loader'
                 ),
                 include: [
                     PATHS.src,
@@ -127,17 +129,24 @@ const envs = {
     },
     prod: {
         devtool: 'source-map',
-        entry: [
-            './src/client.js'
-        ],
+        entry: {
+            client: './src/client.js',
+            vendor: Object.keys(pkg.dependencies)
+        },
+
         output: {
             path: path.join(__dirname, 'dist'),
             publicPath: '/',
-            filename: 'client.[hash].js'
+            filename: '[name].[chunkhash].js'
         },
         plugins: [
+            new webpack.optimize.CommonsChunkPlugin(
+                'vendor',
+                '[name].[chunkhash].js'
+            ),
             webpack_isomorphic_tools_plugin,
             new webpack.optimize.OccurenceOrderPlugin(),
+            new ExtractTextPlugin("styles.[contenthash].css"),
             new HtmlWebpackPlugin({
                 title: 'Pekkis Goes To Movies',
                 template: 'web/index.html',
